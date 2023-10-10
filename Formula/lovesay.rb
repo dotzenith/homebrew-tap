@@ -6,22 +6,22 @@ class Lovesay < Formula
   
   if OS.mac? && Hardware::CPU.intel?
     url "https://github.com/dotzenith/lovesay.rs/releases/download/0.5.2/lovesay-0.5.2-x86_64-apple-darwin.tar.gz"
-    sha256 "454b17b5654848864a16686901d068b7204e86dc"
+    sha256 "8d48befe2df7fb5a3a75df2684c174b2f3fb2d5b1cc0106b79dc0ae11a0fa699"
   end
 
   if OS.mac? && Hardware::CPU.arm?
     url "https://github.com/dotzenith/lovesay.rs/releases/download/0.5.2/lovesay-0.5.2-aarch64-apple-darwin.tar.gz"
-    sha256 "d7a9536e57820400ae4d80c0360895e1ff7413b2"
+    sha256 "fb62e9b220349bd58f53b911fa70a2012c96c213b7e33dc11ad0d34daf46a35f"
   end
 
   if OS.linux? && Hardware::CPU.intel?
     url "https://github.com/dotzenith/lovesay.rs/releases/download/0.5.2/lovesay-0.5.2-x86_64-unknown-linux-musl.tar.gz"
-    sha256 "b73ded66b201cf530160f7df98f2430a084fbbfa"
+    sha256 "f188715f196c68e5213fdcdb949a8d331c34b44356814613dc3df72c5dd49d2e"
   end
 
   if OS.linux? && Hardware::CPU.arm?
     url "https://github.com/dotzenith/lovesay.rs/releases/download/0.5.2/lovesay-0.5.2-arm-unknown-linux-gnueabihf.tar.gz"
-    sha256 "b0dd1eb4b91f9fb5528c98c3ade0d9fbad096a5d"
+    sha256 "0453c6042fe6d24304c42cad0b2f9e38b1c508a8fdd844a41942a6ce8bb4ef43"
   end
 
   def install
