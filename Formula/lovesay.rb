@@ -1,7 +1,7 @@
 class Lovesay < Formula
   desc "Cowsay, but full of love and now a little rusty"
   homepage "https://github.com/dotzenith/lovesay.rs"
-  version "0.5.2"
+  version "0.5.3"
   license "MIT"
   
   if OS.mac? && Hardware::CPU.intel?
