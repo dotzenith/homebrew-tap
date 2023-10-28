@@ -25,6 +25,6 @@ class Theseptatimes < Formula
   end
 
   def install
-    bin.install "tst"
+    bin.install "theseptatimes"
   end
 end
