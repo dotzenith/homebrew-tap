@@ -1,4 +1,4 @@
-class TheSeptaTimes < Formula
+class Theseptatimes < Formula
   desc "A CLI application for the SEPTA API "
   homepage "https://github.com/dotzenith/TheSeptaTimes.rs"
   version "0.1.2"
