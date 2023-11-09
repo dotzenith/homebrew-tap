@@ -1,27 +1,27 @@
 class Theseptatimes < Formula
   desc "A CLI application for the SEPTA API "
   homepage "https://github.com/dotzenith/TheSeptaTimes.rs"
-  version "0.2.0"
+  version "0.3.0"
   license "MIT"
   
   if OS.mac? && Hardware::CPU.intel?
-    url "https://github.com/dotzenith/TheSeptaTimes.rs/releases/download/0.2.0/tst-0.2.0-x86_64-apple-darwin.tar.gz"
-    sha256 "13ddbdfe1b6dfdfebcf6a8a5f036bcd7f2c49361052d54b7a1aea4dff370889c"
+    url "https://github.com/dotzenith/TheSeptaTimes.rs/releases/download/0.3.0/tst-0.3.0-x86_64-apple-darwin.tar.gz"
+    sha256 "fc0daa6aaf1bf82e27a341ba9832e53ffc89cae8fbfb108e8f0387128c1a7809 "
   end
 
   if OS.mac? && Hardware::CPU.arm?
-    url "https://github.com/dotzenith/TheSeptaTimes.rs/releases/download/0.2.0/tst-0.2.0-aarch64-apple-darwin.tar.gz"
-    sha256 "4f8d1817ae529df31f419d8759065cf82a1e958a559336d639567f1b792f9073"
+    url "https://github.com/dotzenith/TheSeptaTimes.rs/releases/download/0.3.0/tst-0.3.0-aarch64-apple-darwin.tar.gz"
+    sha256 "968c671a6c994502ad3dcff2f3fb4c9653a12c3b7034a44587b352d6a3c63d8a"
   end
 
   if OS.linux? && Hardware::CPU.intel?
-    url "https://github.com/dotzenith/TheSeptaTimes.rs/releases/download/0.2.0/tst-0.2.0-x86_64-unknown-linux-musl.tar.gz"
-    sha256 "7ab3a104971468430366fb4abe71ede9b8bccadd26fc1227dc0702eed309a848"
+    url "https://github.com/dotzenith/TheSeptaTimes.rs/releases/download/0.3.0/tst-0.3.0-x86_64-unknown-linux-musl.tar.gz"
+    sha256 "a37cce5e859be1fc33644413ce406831ebb258f9148f13c43a689e934090465d"
   end
 
   if OS.linux? && Hardware::CPU.arm?
-    url "https://github.com/dotzenith/TheSeptaTimes.rs/releases/download/0.2.0/tst-0.2.0-arm-unknown-linux-gnueabihf.tar.gz"
-    sha256 "1c73f511d3e2ae2856f7b6b6d4ec09a4b7f67722cbaa8a7d1b65ab76f4127b8c"
+    url "https://github.com/dotzenith/TheSeptaTimes.rs/releases/download/0.3.0/tst-0.3.0-arm-unknown-linux-gnueabihf.tar.gz"
+    sha256 "e9e8b2fa656554c34fa979b07f4960ed0829c37da078cdbaea7b15b8e3ea771a"
   end
 
   def install
