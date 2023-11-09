@@ -6,7 +6,7 @@ class Theseptatimes < Formula
   
   if OS.mac? && Hardware::CPU.intel?
     url "https://github.com/dotzenith/TheSeptaTimes.rs/releases/download/0.3.0/tst-0.3.0-x86_64-apple-darwin.tar.gz"
-    sha256 "fc0daa6aaf1bf82e27a341ba9832e53ffc89cae8fbfb108e8f0387128c1a7809 "
+    sha256 "fc0daa6aaf1bf82e27a341ba9832e53ffc89cae8fbfb108e8f0387128c1a7809"
   end
 
   if OS.mac? && Hardware::CPU.arm?
