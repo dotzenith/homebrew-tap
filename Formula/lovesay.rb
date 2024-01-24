@@ -1,30 +1,33 @@
 class Lovesay < Formula
-  desc "Cowsay, but full of love and now a little rusty"
-  homepage "https://github.com/dotzenith/lovesay.rs"
-  version "0.5.4"
+  desc "lovesay but rusty"
+  version "0.5.5"
+  on_macos do
+    on_arm do
+      url "https://github.com/dotzenith/lovesay.rs/releases/download/v0.5.5/lovesay-aarch64-apple-darwin.tar.xz"
+      sha256 "3b68acace5ef295ab10d6e5803f5b01cb431274dc9493d17d963b93600a82aba"
+    end
+    on_intel do
+      url "https://github.com/dotzenith/lovesay.rs/releases/download/v0.5.5/lovesay-x86_64-apple-darwin.tar.xz"
+      sha256 "7acd60c42a758a2f931d45de6ecd1dc423c658efef8cc9aca5f707d4abd48110"
+    end
+  end
+  on_linux do
+    on_intel do
+      url "https://github.com/dotzenith/lovesay.rs/releases/download/v0.5.5/lovesay-x86_64-unknown-linux-gnu.tar.xz"
+      sha256 "d6d2e41171f4541038b2d441ec37a58d38e88f31b5f6c612a3358d7b1378b792"
+    end
+  end
   license "MIT"
-  
-  if OS.mac? && Hardware::CPU.intel?
-    url "https://github.com/dotzenith/lovesay.rs/releases/download/0.5.4/lovesay-0.5.4-x86_64-apple-darwin.tar.gz"
-    sha256 "9ec8d0dcae3caf3176892779a304aead70273e6d1a76af2db08a539c4aad5805"
-  end
-
-  if OS.mac? && Hardware::CPU.arm?
-    url "https://github.com/dotzenith/lovesay.rs/releases/download/0.5.4/lovesay-0.5.4-aarch64-apple-darwin.tar.gz"
-    sha256 "df072a86920b5778273272b968fe327057a177f3357937c4f221df67841eda7b"
-  end
-
-  if OS.linux? && Hardware::CPU.intel?
-    url "https://github.com/dotzenith/lovesay.rs/releases/download/0.5.4/lovesay-0.5.4-x86_64-unknown-linux-musl.tar.gz"
-    sha256 "2d21536b5ab8bf248db4c1973afdba8f16c7baa80637d97c6b95b5cc55ba1eab"
-  end
-
-  if OS.linux? && Hardware::CPU.arm?
-    url "https://github.com/dotzenith/lovesay.rs/releases/download/0.5.4/lovesay-0.5.4-arm-unknown-linux-gnueabihf.tar.gz"
-    sha256 "c613f1573a4792af64324aaa698f5e742a5eededd4c794439d2aacaebd9cc948"
-  end
 
   def install
     bin.install "lovesay"
+
+    # Homebrew will automatically install these, so we don't need to do that
+    doc_files = Dir["README.*", "readme.*", "LICENSE", "LICENSE.*", "CHANGELOG.*"]
+    leftover_contents = Dir["*"] - doc_files
+
+    # Install any leftover files in pkgshare; these are probably config or
+    # sample files.
+    pkgshare.install *leftover_contents unless leftover_contents.empty?
   end
 end
