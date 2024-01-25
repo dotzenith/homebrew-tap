@@ -1,20 +1,20 @@
 class TheSeptaTimes < Formula
   desc "A CLI application for the SEPTA API"
-  version "0.4.2"
+  version "0.5.0"
   on_macos do
     on_arm do
-      url "https://github.com/dotzenith/TheSeptaTimes.rs/releases/download/v0.4.2/the-septa-times-aarch64-apple-darwin.tar.xz"
-      sha256 "4f8ee7d7fd33361fbf7e4b191a6e7fb7f541ad78774e01a5a74a5daa22c89bed"
+      url "https://github.com/dotzenith/TheSeptaTimes.rs/releases/download/v0.5.0/the-septa-times-aarch64-apple-darwin.tar.xz"
+      sha256 "449e6da37eb4a79c37357307ab5464772d6601c36408630048dd30cd046d7cdb"
     end
     on_intel do
-      url "https://github.com/dotzenith/TheSeptaTimes.rs/releases/download/v0.4.2/the-septa-times-x86_64-apple-darwin.tar.xz"
-      sha256 "14a954556122b7d1fa6e7f71532047b9d471a5c9d266551ea0458907c75b81f7"
+      url "https://github.com/dotzenith/TheSeptaTimes.rs/releases/download/v0.5.0/the-septa-times-x86_64-apple-darwin.tar.xz"
+      sha256 "18ebea3260f19989434ce809085b867dab364185abd356ec2c0a9dee1279660e"
     end
   end
   on_linux do
     on_intel do
-      url "https://github.com/dotzenith/TheSeptaTimes.rs/releases/download/v0.4.2/the-septa-times-x86_64-unknown-linux-gnu.tar.xz"
-      sha256 "8ce96d54e1e0654bf52c7a2127ab9fccb04c6c04a0c6a2707444f524c15c3bf1"
+      url "https://github.com/dotzenith/TheSeptaTimes.rs/releases/download/v0.5.0/the-septa-times-x86_64-unknown-linux-gnu.tar.xz"
+      sha256 "e4b295a40ad0278c52fa0df47f8c466c515e19916a609b437393479d7b734bd7"
     end
   end
   license "MIT"
