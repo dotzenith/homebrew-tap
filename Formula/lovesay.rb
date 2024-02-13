@@ -1,26 +1,49 @@
 class Lovesay < Formula
   desc "lovesay but rusty"
-  version "0.5.6"
+  version "0.5.7"
   on_macos do
     on_arm do
-      url "https://github.com/dotzenith/lovesay.rs/releases/download/v0.5.6/lovesay-aarch64-apple-darwin.tar.xz"
-      sha256 "4d2e448dfc6c19e53bb2a37d816f1266eb41cb490bbb297b4317264430fb4f46"
+      url "https://github.com/dotzenith/lovesay.rs/releases/download/v0.5.7/lovesay-aarch64-apple-darwin.tar.xz"
+      sha256 "b7f11bd27908aec42cba58f1f78dbe8b70dae5dcddaca3c41d403b1ca083dd6f"
     end
     on_intel do
-      url "https://github.com/dotzenith/lovesay.rs/releases/download/v0.5.6/lovesay-x86_64-apple-darwin.tar.xz"
-      sha256 "f2b66b60767c85697c49eb3850a096a3f5a8b350469ddd0064020949f5c03ed0"
+      url "https://github.com/dotzenith/lovesay.rs/releases/download/v0.5.7/lovesay-x86_64-apple-darwin.tar.xz"
+      sha256 "9aa40951f5ef84ed83ca2dfbdc9f07ed0d81434962d423df3413835fc8b9e437"
     end
   end
   on_linux do
+    on_arm do
+      url "https://github.com/dotzenith/lovesay.rs/releases/download/v0.5.7/lovesay-aarch64-unknown-linux-gnu.tar.xz"
+      sha256 "88f2cc47ea9bdc47ac58e134ad44d369119ff1cfcbd4296f0b481922cf83f677"
+    end
     on_intel do
-      url "https://github.com/dotzenith/lovesay.rs/releases/download/v0.5.6/lovesay-x86_64-unknown-linux-gnu.tar.xz"
-      sha256 "8be6f7e62e5fa4cd6c248b2695328c51b2c33a99deadfda52b2073b369a46f23"
+      url "https://github.com/dotzenith/lovesay.rs/releases/download/v0.5.7/lovesay-x86_64-unknown-linux-gnu.tar.xz"
+      sha256 "7cd49a5f23f240c4cfe9b43e8a8158f39826352905f0ecae1bcf9b696ae2eb3f"
     end
   end
   license "MIT"
 
   def install
-    bin.install "lovesay"
+    on_macos do
+      on_arm do
+        bin.install "lovesay"
+      end
+    end
+    on_macos do
+      on_intel do
+        bin.install "lovesay"
+      end
+    end
+    on_linux do
+      on_arm do
+        bin.install "lovesay"
+      end
+    end
+    on_linux do
+      on_intel do
+        bin.install "lovesay"
+      end
+    end
 
     # Homebrew will automatically install these, so we don't need to do that
     doc_files = Dir["README.*", "readme.*", "LICENSE", "LICENSE.*", "CHANGELOG.*"]
