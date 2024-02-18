@@ -1,24 +1,24 @@
 class Lovesay < Formula
   desc "lovesay but rusty"
-  version "0.5.7"
+  version "0.6.0"
   on_macos do
     on_arm do
-      url "https://github.com/dotzenith/lovesay.rs/releases/download/v0.5.7/lovesay-aarch64-apple-darwin.tar.xz"
-      sha256 "b7f11bd27908aec42cba58f1f78dbe8b70dae5dcddaca3c41d403b1ca083dd6f"
+      url "https://github.com/dotzenith/lovesay.rs/releases/download/v0.6.0/lovesay-aarch64-apple-darwin.tar.xz"
+      sha256 "7163aef5706bb4950c15d0b450384156be58ebfb4018d04b6bc6e0afb73e5f8c"
     end
     on_intel do
-      url "https://github.com/dotzenith/lovesay.rs/releases/download/v0.5.7/lovesay-x86_64-apple-darwin.tar.xz"
-      sha256 "9aa40951f5ef84ed83ca2dfbdc9f07ed0d81434962d423df3413835fc8b9e437"
+      url "https://github.com/dotzenith/lovesay.rs/releases/download/v0.6.0/lovesay-x86_64-apple-darwin.tar.xz"
+      sha256 "c06481f0492743bf08093a6f05531e145479ce1b6ff6de6d9d94d3e12db96551"
     end
   end
   on_linux do
     on_arm do
-      url "https://github.com/dotzenith/lovesay.rs/releases/download/v0.5.7/lovesay-aarch64-unknown-linux-gnu.tar.xz"
-      sha256 "88f2cc47ea9bdc47ac58e134ad44d369119ff1cfcbd4296f0b481922cf83f677"
+      url "https://github.com/dotzenith/lovesay.rs/releases/download/v0.6.0/lovesay-aarch64-unknown-linux-gnu.tar.xz"
+      sha256 "122d5f9eae282dd31c83db490ffdd6b382ad6f7d33a89fdaf64f50b41e67b06a"
     end
     on_intel do
-      url "https://github.com/dotzenith/lovesay.rs/releases/download/v0.5.7/lovesay-x86_64-unknown-linux-gnu.tar.xz"
-      sha256 "7cd49a5f23f240c4cfe9b43e8a8158f39826352905f0ecae1bcf9b696ae2eb3f"
+      url "https://github.com/dotzenith/lovesay.rs/releases/download/v0.6.0/lovesay-x86_64-unknown-linux-gnu.tar.xz"
+      sha256 "a26c1396b7d7020c28fcd33314bde27ac56d012b3fe62381a6f07cba105ab2f0"
     end
   end
   license "MIT"
