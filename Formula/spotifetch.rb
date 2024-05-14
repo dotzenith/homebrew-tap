@@ -1,49 +1,61 @@
 class Spotifetch < Formula
   desc "A simple and beautiful fetch tool for spotify, now rusty :) "
-  version "0.1.3"
-  on_macos do
-    on_arm do
-      url "https://github.com/dotzenith/SpotiFetch.rs/releases/download/v0.1.3/spotifetch-aarch64-apple-darwin.tar.xz"
-      sha256 "db84497c58682287c8d428acf6efca03ea5d5d19720a75f7a840544948eb81a8"
+  homepage "https://github.com/dotzenith/SpotiFetch.rs"
+  version "0.1.4"
+  if OS.mac?
+    if Hardware::CPU.arm?
+      url "https://github.com/dotzenith/SpotiFetch.rs/releases/download/v0.1.4/spotifetch-aarch64-apple-darwin.tar.xz"
+      sha256 "1884eb895080fff4128eae4d436797a378fa5184a3025f00dd335c42d4a7a2d1"
     end
-    on_intel do
-      url "https://github.com/dotzenith/SpotiFetch.rs/releases/download/v0.1.3/spotifetch-x86_64-apple-darwin.tar.xz"
-      sha256 "d09f78afa3f5d499a885d0d1fa355db8696fecb555a872399c70cd99bb4131bf"
+    if Hardware::CPU.intel?
+      url "https://github.com/dotzenith/SpotiFetch.rs/releases/download/v0.1.4/spotifetch-x86_64-apple-darwin.tar.xz"
+      sha256 "35fac3c97a0640126cc6241a11e235165ab2d479027e66b066a3769c2ed2792b"
     end
   end
-  on_linux do
-    on_arm do
-      url "https://github.com/dotzenith/SpotiFetch.rs/releases/download/v0.1.3/spotifetch-aarch64-unknown-linux-gnu.tar.xz"
-      sha256 "81f779e9599ba86a8f49942caf2083521484e8bea244332d10e002fdb4cbe6f2"
+  if OS.linux?
+    if Hardware::CPU.arm?
+      url "https://github.com/dotzenith/SpotiFetch.rs/releases/download/v0.1.4/spotifetch-aarch64-unknown-linux-gnu.tar.xz"
+      sha256 "ba8adf6673cec8bdf1cba48c604de9cd5926314009c7ba295f6ba3c889c5ffe1"
     end
-    on_intel do
-      url "https://github.com/dotzenith/SpotiFetch.rs/releases/download/v0.1.3/spotifetch-x86_64-unknown-linux-gnu.tar.xz"
-      sha256 "37a8d5f468c2a5d2e3f7f291f8d46c881314f11d6ba5df26c78af8ae3cc8346a"
+    if Hardware::CPU.intel?
+      url "https://github.com/dotzenith/SpotiFetch.rs/releases/download/v0.1.4/spotifetch-x86_64-unknown-linux-gnu.tar.xz"
+      sha256 "c35ee00199d5f75c21e39701d1188169bd467fd212ecbe33eb4289c5b7f2573b"
     end
   end
   license "MIT"
 
+  BINARY_ALIASES = {"aarch64-apple-darwin": {}, "aarch64-unknown-linux-gnu": {}, "x86_64-apple-darwin": {}, "x86_64-pc-windows-gnu": {}, "x86_64-unknown-linux-gnu": {}, "x86_64-unknown-linux-musl-dynamic": {}, "x86_64-unknown-linux-musl-static": {}}
+
+  def target_triple
+    cpu = Hardware::CPU.arm? ? "aarch64" : "x86_64"
+    os = OS.mac? ? "apple-darwin" : "unknown-linux-gnu"
+
+    "#{cpu}-#{os}"
+  end
+
+  def install_binary_aliases!
+    BINARY_ALIASES[target_triple.to_sym].each do |source, dests|
+      dests.each do |dest|
+        bin.install_symlink bin/source.to_s => dest
+      end
+    end
+  end
+
   def install
-    on_macos do
-      on_arm do
-        bin.install "spotifetch"
-      end
+    if OS.mac? && Hardware::CPU.arm?
+      bin.install "spotifetch"
     end
-    on_macos do
-      on_intel do
-        bin.install "spotifetch"
-      end
+    if OS.mac? && Hardware::CPU.intel?
+      bin.install "spotifetch"
     end
-    on_linux do
-      on_arm do
-        bin.install "spotifetch"
-      end
+    if OS.linux? && Hardware::CPU.arm?
+      bin.install "spotifetch"
     end
-    on_linux do
-      on_intel do
-        bin.install "spotifetch"
-      end
+    if OS.linux? && Hardware::CPU.intel?
+      bin.install "spotifetch"
     end
+
+    install_binary_aliases!
 
     # Homebrew will automatically install these, so we don't need to do that
     doc_files = Dir["README.*", "readme.*", "LICENSE", "LICENSE.*", "CHANGELOG.*"]
@@ -51,6 +63,6 @@ class Spotifetch < Formula
 
     # Install any leftover files in pkgshare; these are probably config or
     # sample files.
-    pkgshare.install *leftover_contents unless leftover_contents.empty?
+    pkgshare.install(*leftover_contents) unless leftover_contents.empty?
   end
 end
