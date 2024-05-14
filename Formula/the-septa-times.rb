@@ -1,49 +1,61 @@
 class TheSeptaTimes < Formula
   desc "A CLI application for the SEPTA API"
-  version "0.5.3"
-  on_macos do
-    on_arm do
-      url "https://github.com/dotzenith/TheSeptaTimes.rs/releases/download/v0.5.3/the-septa-times-aarch64-apple-darwin.tar.xz"
-      sha256 "6f8271e15b10c2a8d5c5b697c06a284e91302d9a9698988649c83af86c288e7b"
+  homepage "https://github.com/dotzenith/TheSeptaTimes.rs"
+  version "0.5.4"
+  if OS.mac?
+    if Hardware::CPU.arm?
+      url "https://github.com/dotzenith/TheSeptaTimes.rs/releases/download/v0.5.4/the-septa-times-aarch64-apple-darwin.tar.xz"
+      sha256 "d88306cca4d6e4051be5d793ce633323b04b1280492a3e79703d5eaf6a2ef80a"
     end
-    on_intel do
-      url "https://github.com/dotzenith/TheSeptaTimes.rs/releases/download/v0.5.3/the-septa-times-x86_64-apple-darwin.tar.xz"
-      sha256 "1a355d1a7b2e30e2222e7341a910aa78c3db6a06bd3cc5d63ea01434675fefb6"
+    if Hardware::CPU.intel?
+      url "https://github.com/dotzenith/TheSeptaTimes.rs/releases/download/v0.5.4/the-septa-times-x86_64-apple-darwin.tar.xz"
+      sha256 "5dd3cf97518a13c1533d7e4479f8fb054fd7c93e1ee43b2d78d64956dd7e1cfd"
     end
   end
-  on_linux do
-    on_arm do
-      url "https://github.com/dotzenith/TheSeptaTimes.rs/releases/download/v0.5.3/the-septa-times-aarch64-unknown-linux-gnu.tar.xz"
-      sha256 "04c4e7e937ea8516ba1ef549715d8d623b0d5f13c4995b0c977ccae448daa532"
+  if OS.linux?
+    if Hardware::CPU.arm?
+      url "https://github.com/dotzenith/TheSeptaTimes.rs/releases/download/v0.5.4/the-septa-times-aarch64-unknown-linux-gnu.tar.xz"
+      sha256 "53f3affa9a7df562d52d6fbd943430000bb027d92fee985d86f3226606b840bc"
     end
-    on_intel do
-      url "https://github.com/dotzenith/TheSeptaTimes.rs/releases/download/v0.5.3/the-septa-times-x86_64-unknown-linux-gnu.tar.xz"
-      sha256 "959b5d769ab08e33a303e94ce44662332a0c856ad7bf8074d814f3934e60dfd3"
+    if Hardware::CPU.intel?
+      url "https://github.com/dotzenith/TheSeptaTimes.rs/releases/download/v0.5.4/the-septa-times-x86_64-unknown-linux-gnu.tar.xz"
+      sha256 "4fa24f0c4cf4a7c1e7dd855e1762c37bd8dc4fa31fc18f7258156d3b2c6b3d47"
     end
   end
   license "MIT"
 
+  BINARY_ALIASES = {"aarch64-apple-darwin": {}, "aarch64-unknown-linux-gnu": {}, "x86_64-apple-darwin": {}, "x86_64-pc-windows-gnu": {}, "x86_64-unknown-linux-gnu": {}, "x86_64-unknown-linux-musl-dynamic": {}, "x86_64-unknown-linux-musl-static": {}}
+
+  def target_triple
+    cpu = Hardware::CPU.arm? ? "aarch64" : "x86_64"
+    os = OS.mac? ? "apple-darwin" : "unknown-linux-gnu"
+
+    "#{cpu}-#{os}"
+  end
+
+  def install_binary_aliases!
+    BINARY_ALIASES[target_triple.to_sym].each do |source, dests|
+      dests.each do |dest|
+        bin.install_symlink bin/source.to_s => dest
+      end
+    end
+  end
+
   def install
-    on_macos do
-      on_arm do
-        bin.install "tst"
-      end
+    if OS.mac? && Hardware::CPU.arm?
+      bin.install "tst"
     end
-    on_macos do
-      on_intel do
-        bin.install "tst"
-      end
+    if OS.mac? && Hardware::CPU.intel?
+      bin.install "tst"
     end
-    on_linux do
-      on_arm do
-        bin.install "tst"
-      end
+    if OS.linux? && Hardware::CPU.arm?
+      bin.install "tst"
     end
-    on_linux do
-      on_intel do
-        bin.install "tst"
-      end
+    if OS.linux? && Hardware::CPU.intel?
+      bin.install "tst"
     end
+
+    install_binary_aliases!
 
     # Homebrew will automatically install these, so we don't need to do that
     doc_files = Dir["README.*", "readme.*", "LICENSE", "LICENSE.*", "CHANGELOG.*"]
@@ -51,6 +63,6 @@ class TheSeptaTimes < Formula
 
     # Install any leftover files in pkgshare; these are probably config or
     # sample files.
-    pkgshare.install *leftover_contents unless leftover_contents.empty?
+    pkgshare.install(*leftover_contents) unless leftover_contents.empty?
   end
 end
