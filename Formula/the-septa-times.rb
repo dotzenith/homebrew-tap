@@ -1,25 +1,25 @@
 class TheSeptaTimes < Formula
   desc "A CLI application for the SEPTA API"
   homepage "https://github.com/dotzenith/TheSeptaTimes.rs"
-  version "0.5.4"
+  version "0.6.0"
   if OS.mac?
     if Hardware::CPU.arm?
-      url "https://github.com/dotzenith/TheSeptaTimes.rs/releases/download/v0.5.4/the-septa-times-aarch64-apple-darwin.tar.xz"
-      sha256 "d88306cca4d6e4051be5d793ce633323b04b1280492a3e79703d5eaf6a2ef80a"
+      url "https://github.com/dotzenith/TheSeptaTimes.rs/releases/download/v0.6.0/the-septa-times-aarch64-apple-darwin.tar.xz"
+      sha256 "f4cf9778f7519b31c3959d075e892f8531dedab70908cb0f702871d787e66e8f"
     end
     if Hardware::CPU.intel?
-      url "https://github.com/dotzenith/TheSeptaTimes.rs/releases/download/v0.5.4/the-septa-times-x86_64-apple-darwin.tar.xz"
-      sha256 "5dd3cf97518a13c1533d7e4479f8fb054fd7c93e1ee43b2d78d64956dd7e1cfd"
+      url "https://github.com/dotzenith/TheSeptaTimes.rs/releases/download/v0.6.0/the-septa-times-x86_64-apple-darwin.tar.xz"
+      sha256 "ffd5b7a84893edacb07f9126e1a26119f627dd164db43d7480306d6414467c1e"
     end
   end
   if OS.linux?
     if Hardware::CPU.arm?
-      url "https://github.com/dotzenith/TheSeptaTimes.rs/releases/download/v0.5.4/the-septa-times-aarch64-unknown-linux-gnu.tar.xz"
-      sha256 "53f3affa9a7df562d52d6fbd943430000bb027d92fee985d86f3226606b840bc"
+      url "https://github.com/dotzenith/TheSeptaTimes.rs/releases/download/v0.6.0/the-septa-times-aarch64-unknown-linux-gnu.tar.xz"
+      sha256 "d1ee41261de27d31e74048702087c64f608a1bf463a28d624f45ee979d137314"
     end
     if Hardware::CPU.intel?
-      url "https://github.com/dotzenith/TheSeptaTimes.rs/releases/download/v0.5.4/the-septa-times-x86_64-unknown-linux-gnu.tar.xz"
-      sha256 "4fa24f0c4cf4a7c1e7dd855e1762c37bd8dc4fa31fc18f7258156d3b2c6b3d47"
+      url "https://github.com/dotzenith/TheSeptaTimes.rs/releases/download/v0.6.0/the-septa-times-x86_64-unknown-linux-gnu.tar.xz"
+      sha256 "e70322d88b4f02ff62353bf0ac4c80f1f4a16cf6100baba8b0aa776afe097003"
     end
   end
   license "MIT"
