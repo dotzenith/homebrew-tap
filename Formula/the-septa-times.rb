@@ -1,25 +1,25 @@
 class TheSeptaTimes < Formula
   desc "A CLI application for the SEPTA API"
   homepage "https://github.com/dotzenith/TheSeptaTimes.rs"
-  version "0.6.2"
+  version "0.7.0"
   if OS.mac?
     if Hardware::CPU.arm?
-      url "https://github.com/dotzenith/TheSeptaTimes.rs/releases/download/v0.6.2/the-septa-times-aarch64-apple-darwin.tar.xz"
-      sha256 "3da2ef031ef806ac7fb8772ec990efc55d47213b931549a7c969d744edb8b152"
+      url "https://github.com/dotzenith/TheSeptaTimes.rs/releases/download/v0.7.0/the-septa-times-aarch64-apple-darwin.tar.xz"
+      sha256 "f4696baf89dc4fc6634cef55c22401b83b1df8b63e8e9a656fce50fd7cce16b5"
     end
     if Hardware::CPU.intel?
-      url "https://github.com/dotzenith/TheSeptaTimes.rs/releases/download/v0.6.2/the-septa-times-x86_64-apple-darwin.tar.xz"
-      sha256 "831a3c74a49d120c9c2d628f5cccac4a615e6fa3851cc4a5d1d9ea936cc296f3"
+      url "https://github.com/dotzenith/TheSeptaTimes.rs/releases/download/v0.7.0/the-septa-times-x86_64-apple-darwin.tar.xz"
+      sha256 "55f97f38ebcfde4fe4628457d684b7cfe09a28f9d45e0f1638fd59c22d33e20c"
     end
   end
   if OS.linux?
     if Hardware::CPU.arm?
-      url "https://github.com/dotzenith/TheSeptaTimes.rs/releases/download/v0.6.2/the-septa-times-aarch64-unknown-linux-gnu.tar.xz"
-      sha256 "5959af8a516509e8d8fa1ff27e3e7305dac226181a064fdc0a3bc6063edfa393"
+      url "https://github.com/dotzenith/TheSeptaTimes.rs/releases/download/v0.7.0/the-septa-times-aarch64-unknown-linux-gnu.tar.xz"
+      sha256 "195e2891aa6b6f48d2b1a28e5a51a136c47dbccbb1b135112e0bef13e4299bab"
     end
     if Hardware::CPU.intel?
-      url "https://github.com/dotzenith/TheSeptaTimes.rs/releases/download/v0.6.2/the-septa-times-x86_64-unknown-linux-gnu.tar.xz"
-      sha256 "98232302e1b6cc6ca16e3565e6201b25c234466c434b32ca6f0cb84aa108f6d5"
+      url "https://github.com/dotzenith/TheSeptaTimes.rs/releases/download/v0.7.0/the-septa-times-x86_64-unknown-linux-gnu.tar.xz"
+      sha256 "d4e10783a5958e5a124bab4e7141ab5977fdb8d6cf269a5d4300bbc725a28b3a"
     end
   end
   license "MIT"
