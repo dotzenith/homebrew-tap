@@ -1,20 +1,20 @@
 class Avatarsay < Formula
   desc "Beautiful quotes from Avatar: The Last Airbender"
   homepage "https://github.com/dotzenith/AvatarSay"
-  version "0.1.0"
+  version "0.1.1"
   if OS.mac?
     if Hardware::CPU.arm?
-      url "https://github.com/dotzenith/AvatarSay/releases/download/v0.1.0/avatarsay-aarch64-apple-darwin.tar.xz"
-      sha256 "273ac4779b2ca233dea0f76c3de300730dfbd48f82f8d8e99266c2e5b1fe5a02"
+      url "https://github.com/dotzenith/AvatarSay/releases/download/v0.1.1/avatarsay-aarch64-apple-darwin.tar.xz"
+      sha256 "7344d3a9b7504f3b17f1d3f4fd696728d9efaf47e0f452966c4c712e12b0bddc"
     end
     if Hardware::CPU.intel?
-      url "https://github.com/dotzenith/AvatarSay/releases/download/v0.1.0/avatarsay-x86_64-apple-darwin.tar.xz"
-      sha256 "30a98e98d36a7fdeaa246032706e6f9b11a6669090caf9836636e592c1d0dd43"
+      url "https://github.com/dotzenith/AvatarSay/releases/download/v0.1.1/avatarsay-x86_64-apple-darwin.tar.xz"
+      sha256 "4eb0d4303f6f191fa0826c6476cb181ef1ff3e1818be5dc53f22d29d9b67fa1c"
     end
   end
   if OS.linux? && Hardware::CPU.intel?
-    url "https://github.com/dotzenith/AvatarSay/releases/download/v0.1.0/avatarsay-x86_64-unknown-linux-gnu.tar.xz"
-    sha256 "882ee8933495bc88a6d40dae59c0eca27af9244876d565a539c523556ef13f06"
+    url "https://github.com/dotzenith/AvatarSay/releases/download/v0.1.1/avatarsay-x86_64-unknown-linux-gnu.tar.xz"
+    sha256 "d5d47f3eb737463c1176a6588b9c854a63ca5cb96147fe86798df6bfc39003e9"
   end
   license "MIT"
 
