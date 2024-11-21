@@ -1,30 +1,40 @@
 class Lovesay < Formula
   desc "lovesay but rusty"
   homepage "https://github.com/dotzenith/lovesay.rs"
-  version "0.6.1"
+  version "1.0.0"
   if OS.mac?
     if Hardware::CPU.arm?
-      url "https://github.com/dotzenith/lovesay.rs/releases/download/v0.6.1/lovesay-aarch64-apple-darwin.tar.xz"
-      sha256 "92a0b6ae7d7cf4d7743142d9d486c9d58b7c6da2f93b7051c392ef792f29526f"
+      url "https://github.com/dotzenith/lovesay.rs/releases/download/v1.0.0/lovesay-aarch64-apple-darwin.tar.xz"
+      sha256 "a714fac9cc50e107ccfb841b824af7af503f9c05172476bf6f60c1a0e2845dda"
     end
     if Hardware::CPU.intel?
-      url "https://github.com/dotzenith/lovesay.rs/releases/download/v0.6.1/lovesay-x86_64-apple-darwin.tar.xz"
-      sha256 "47a5bf5c2fd693a3139aa359c4d67f4be6014b6819f1b8118c0c31d933d706e3"
+      url "https://github.com/dotzenith/lovesay.rs/releases/download/v1.0.0/lovesay-x86_64-apple-darwin.tar.xz"
+      sha256 "887c87b387d02dfe32213a9808f57799b2538790571ebf019ca2dafdb3a10ebf"
     end
   end
   if OS.linux?
     if Hardware::CPU.arm?
-      url "https://github.com/dotzenith/lovesay.rs/releases/download/v0.6.1/lovesay-aarch64-unknown-linux-gnu.tar.xz"
-      sha256 "587f19394b229f2393115737555551c238006bfd264827d9cb3a746a24ba2987"
+      url "https://github.com/dotzenith/lovesay.rs/releases/download/v1.0.0/lovesay-aarch64-unknown-linux-gnu.tar.xz"
+      sha256 "71398bc30b11db50ce08400eb8a2c5d946105aa8bc6066c6f217bdf134bc0965"
     end
     if Hardware::CPU.intel?
-      url "https://github.com/dotzenith/lovesay.rs/releases/download/v0.6.1/lovesay-x86_64-unknown-linux-gnu.tar.xz"
-      sha256 "98866c57226dee3dce732b2bb885d6758f8270395aaa0d0b3872d7f60a19968e"
+      url "https://github.com/dotzenith/lovesay.rs/releases/download/v1.0.0/lovesay-x86_64-unknown-linux-gnu.tar.xz"
+      sha256 "81b2840614bf006b2607a328ccdb6f6e16f6ace7841135d456583274b91bff7c"
     end
   end
   license "MIT"
 
-  BINARY_ALIASES = {"aarch64-apple-darwin": {}, "aarch64-unknown-linux-gnu": {}, "aarch64-unknown-linux-musl-dynamic": {}, "aarch64-unknown-linux-musl-static": {}, "x86_64-apple-darwin": {}, "x86_64-pc-windows-gnu": {}, "x86_64-unknown-linux-gnu": {}, "x86_64-unknown-linux-musl-dynamic": {}, "x86_64-unknown-linux-musl-static": {}}
+  BINARY_ALIASES = {
+    "aarch64-apple-darwin":               {},
+    "aarch64-unknown-linux-gnu":          {},
+    "aarch64-unknown-linux-musl-dynamic": {},
+    "aarch64-unknown-linux-musl-static":  {},
+    "x86_64-apple-darwin":                {},
+    "x86_64-pc-windows-gnu":              {},
+    "x86_64-unknown-linux-gnu":           {},
+    "x86_64-unknown-linux-musl-dynamic":  {},
+    "x86_64-unknown-linux-musl-static":   {},
+  }.freeze
 
   def target_triple
     cpu = Hardware::CPU.arm? ? "aarch64" : "x86_64"
@@ -42,18 +52,10 @@ class Lovesay < Formula
   end
 
   def install
-    if OS.mac? && Hardware::CPU.arm?
-      bin.install "lovesay"
-    end
-    if OS.mac? && Hardware::CPU.intel?
-      bin.install "lovesay"
-    end
-    if OS.linux? && Hardware::CPU.arm?
-      bin.install "lovesay"
-    end
-    if OS.linux? && Hardware::CPU.intel?
-      bin.install "lovesay"
-    end
+    bin.install "lovesay" if OS.mac? && Hardware::CPU.arm?
+    bin.install "lovesay" if OS.mac? && Hardware::CPU.intel?
+    bin.install "lovesay" if OS.linux? && Hardware::CPU.arm?
+    bin.install "lovesay" if OS.linux? && Hardware::CPU.intel?
 
     install_binary_aliases!
 
