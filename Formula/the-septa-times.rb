@@ -1,30 +1,38 @@
 class TheSeptaTimes < Formula
   desc "A CLI application for the SEPTA API"
   homepage "https://github.com/dotzenith/TheSeptaTimes.rs"
-  version "0.9.0"
+  version "0.9.1"
   if OS.mac?
     if Hardware::CPU.arm?
-      url "https://github.com/dotzenith/TheSeptaTimes.rs/releases/download/v0.9.0/the-septa-times-aarch64-apple-darwin.tar.xz"
-      sha256 "e9ef47c188342a3547de3f9a08259a8cf77dd6f098e7eba0c3e144314895f376"
+      url "https://github.com/dotzenith/TheSeptaTimes.rs/releases/download/v0.9.1/the-septa-times-aarch64-apple-darwin.tar.xz"
+      sha256 "b0688577fc8380d2fb561a50e6c8a099cb170324895468e3cbcb4b7511221bb7"
     end
     if Hardware::CPU.intel?
-      url "https://github.com/dotzenith/TheSeptaTimes.rs/releases/download/v0.9.0/the-septa-times-x86_64-apple-darwin.tar.xz"
-      sha256 "67ceb31a4eb0141cfb4ce5e333e1510675eeb620ced0babadd6fbb48924c3aae"
+      url "https://github.com/dotzenith/TheSeptaTimes.rs/releases/download/v0.9.1/the-septa-times-x86_64-apple-darwin.tar.xz"
+      sha256 "9a98f9f08f2eb132c0db2db2297adcbb4cee3d763cd989d91c44696093dc67d4"
     end
   end
   if OS.linux?
     if Hardware::CPU.arm?
-      url "https://github.com/dotzenith/TheSeptaTimes.rs/releases/download/v0.9.0/the-septa-times-aarch64-unknown-linux-gnu.tar.xz"
-      sha256 "dda07311d3c6be8396230067b2a92d096a7a340b3f9627aab07f849ad8e3b433"
+      url "https://github.com/dotzenith/TheSeptaTimes.rs/releases/download/v0.9.1/the-septa-times-aarch64-unknown-linux-gnu.tar.xz"
+      sha256 "40de65977951c0bb412b7f2f57741336d6ba91ce9bdc267dc2782cb4820da058"
     end
     if Hardware::CPU.intel?
-      url "https://github.com/dotzenith/TheSeptaTimes.rs/releases/download/v0.9.0/the-septa-times-x86_64-unknown-linux-gnu.tar.xz"
-      sha256 "59fdc541dcdbbdec92ac0c80a68ef810008750aed84457034cdbcb1d32fedd7e"
+      url "https://github.com/dotzenith/TheSeptaTimes.rs/releases/download/v0.9.1/the-septa-times-x86_64-unknown-linux-gnu.tar.xz"
+      sha256 "6eb37e2e7bbe0bd9a0ecf691db08f8fb1894ad496bb1d1ce2764b3a3a8d89682"
     end
   end
   license "MIT"
 
-  BINARY_ALIASES = {"aarch64-apple-darwin": {}, "aarch64-unknown-linux-gnu": {}, "x86_64-apple-darwin": {}, "x86_64-pc-windows-gnu": {}, "x86_64-unknown-linux-gnu": {}, "x86_64-unknown-linux-musl-dynamic": {}, "x86_64-unknown-linux-musl-static": {}}
+  BINARY_ALIASES = {
+    "aarch64-apple-darwin":              {},
+    "aarch64-unknown-linux-gnu":         {},
+    "x86_64-apple-darwin":               {},
+    "x86_64-pc-windows-gnu":             {},
+    "x86_64-unknown-linux-gnu":          {},
+    "x86_64-unknown-linux-musl-dynamic": {},
+    "x86_64-unknown-linux-musl-static":  {},
+  }.freeze
 
   def target_triple
     cpu = Hardware::CPU.arm? ? "aarch64" : "x86_64"
@@ -42,18 +50,10 @@ class TheSeptaTimes < Formula
   end
 
   def install
-    if OS.mac? && Hardware::CPU.arm?
-      bin.install "tst"
-    end
-    if OS.mac? && Hardware::CPU.intel?
-      bin.install "tst"
-    end
-    if OS.linux? && Hardware::CPU.arm?
-      bin.install "tst"
-    end
-    if OS.linux? && Hardware::CPU.intel?
-      bin.install "tst"
-    end
+    bin.install "tst" if OS.mac? && Hardware::CPU.arm?
+    bin.install "tst" if OS.mac? && Hardware::CPU.intel?
+    bin.install "tst" if OS.linux? && Hardware::CPU.arm?
+    bin.install "tst" if OS.linux? && Hardware::CPU.intel?
 
     install_binary_aliases!
 
