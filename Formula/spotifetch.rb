@@ -5,26 +5,34 @@ class Spotifetch < Formula
   if OS.mac?
     if Hardware::CPU.arm?
       url "https://github.com/dotzenith/SpotiFetch.rs/releases/download/v0.1.4/spotifetch-aarch64-apple-darwin.tar.xz"
-      sha256 "1884eb895080fff4128eae4d436797a378fa5184a3025f00dd335c42d4a7a2d1"
+      sha256 "9f14e456d8691138fb137b448ff234bcf25d363f0891ff1e4fb2ab8630e176e7"
     end
     if Hardware::CPU.intel?
       url "https://github.com/dotzenith/SpotiFetch.rs/releases/download/v0.1.4/spotifetch-x86_64-apple-darwin.tar.xz"
-      sha256 "35fac3c97a0640126cc6241a11e235165ab2d479027e66b066a3769c2ed2792b"
+      sha256 "d6ebca3a3c8f2d5c4e5b93c40d49b969b93b88134622beca4bb77e7d7c646d47"
     end
   end
   if OS.linux?
     if Hardware::CPU.arm?
       url "https://github.com/dotzenith/SpotiFetch.rs/releases/download/v0.1.4/spotifetch-aarch64-unknown-linux-gnu.tar.xz"
-      sha256 "ba8adf6673cec8bdf1cba48c604de9cd5926314009c7ba295f6ba3c889c5ffe1"
+      sha256 "58918a9f795d2b6b47f94e5fceb5c53a6af604c34d0de96824ebf73a55b39790"
     end
     if Hardware::CPU.intel?
       url "https://github.com/dotzenith/SpotiFetch.rs/releases/download/v0.1.4/spotifetch-x86_64-unknown-linux-gnu.tar.xz"
-      sha256 "c35ee00199d5f75c21e39701d1188169bd467fd212ecbe33eb4289c5b7f2573b"
+      sha256 "d627c1b3c43a1b1fea49bc9654e033803373b9f9109e9a94f72112830cf96dab"
     end
   end
   license "MIT"
 
-  BINARY_ALIASES = {"aarch64-apple-darwin": {}, "aarch64-unknown-linux-gnu": {}, "x86_64-apple-darwin": {}, "x86_64-pc-windows-gnu": {}, "x86_64-unknown-linux-gnu": {}, "x86_64-unknown-linux-musl-dynamic": {}, "x86_64-unknown-linux-musl-static": {}}
+  BINARY_ALIASES = {
+    "aarch64-apple-darwin":              {},
+    "aarch64-unknown-linux-gnu":         {},
+    "x86_64-apple-darwin":               {},
+    "x86_64-pc-windows-gnu":             {},
+    "x86_64-unknown-linux-gnu":          {},
+    "x86_64-unknown-linux-musl-dynamic": {},
+    "x86_64-unknown-linux-musl-static":  {},
+  }.freeze
 
   def target_triple
     cpu = Hardware::CPU.arm? ? "aarch64" : "x86_64"
@@ -42,18 +50,10 @@ class Spotifetch < Formula
   end
 
   def install
-    if OS.mac? && Hardware::CPU.arm?
-      bin.install "spotifetch"
-    end
-    if OS.mac? && Hardware::CPU.intel?
-      bin.install "spotifetch"
-    end
-    if OS.linux? && Hardware::CPU.arm?
-      bin.install "spotifetch"
-    end
-    if OS.linux? && Hardware::CPU.intel?
-      bin.install "spotifetch"
-    end
+    bin.install "spotifetch" if OS.mac? && Hardware::CPU.arm?
+    bin.install "spotifetch" if OS.mac? && Hardware::CPU.intel?
+    bin.install "spotifetch" if OS.linux? && Hardware::CPU.arm?
+    bin.install "spotifetch" if OS.linux? && Hardware::CPU.intel?
 
     install_binary_aliases!
 
