@@ -5,21 +5,21 @@ class Zendns < Formula
   if OS.mac?
     if Hardware::CPU.arm?
       url "https://github.com/dotzenith/ZenDNS/releases/download/v0.3.1/zendns-aarch64-apple-darwin.tar.xz"
-      sha256 "838e5e7f4306d011b6f0b32952c2ead97b7f99477c0a2d2ed0916c3c304cf526"
+      sha256 "140480bd2d5e91ad8356947361e6013965da70ac3d7e2ddf842427d580a72ee6"
     end
     if Hardware::CPU.intel?
       url "https://github.com/dotzenith/ZenDNS/releases/download/v0.3.1/zendns-x86_64-apple-darwin.tar.xz"
-      sha256 "7d75eded76123151f059f9e5f9682b92ff9afd5cc9fb2df534410876cfe91669"
+      sha256 "6eebbc59ebdf4bd6325bd0c5eb2cbe81a8ed5e1003c394b2ff1ec8658350d54b"
     end
   end
   if OS.linux?
     if Hardware::CPU.arm?
       url "https://github.com/dotzenith/ZenDNS/releases/download/v0.3.1/zendns-aarch64-unknown-linux-gnu.tar.xz"
-      sha256 "48bbc24ca1b0792de2b46a5e60da93c55e509ad43ba0616112b5b695c6e77eee"
+      sha256 "6b6143b54e980d8978551f9d7782401fb976b8c0cccbbc9d4d5749965d63aa1d"
     end
     if Hardware::CPU.intel?
       url "https://github.com/dotzenith/ZenDNS/releases/download/v0.3.1/zendns-x86_64-unknown-linux-gnu.tar.xz"
-      sha256 "3506fcaa681576d5ff8da29cec968d08684f9a9ad8b4139e8913a2806aa58f56"
+      sha256 "d500abb3fe8b7528f381974906459f95d8d9e321b8413c3e8cb946d52b9563b9"
     end
   end
   license "MIT"
