@@ -5,16 +5,16 @@ class Avatarsay < Formula
   if OS.mac?
     if Hardware::CPU.arm?
       url "https://github.com/dotzenith/AvatarSay/releases/download/v0.1.1/avatarsay-aarch64-apple-darwin.tar.xz"
-      sha256 "7344d3a9b7504f3b17f1d3f4fd696728d9efaf47e0f452966c4c712e12b0bddc"
+      sha256 "a2c506412919adbdf1bfb50ded90949a56eb4ac5cb080bb34d3b05c69a1581fc"
     end
     if Hardware::CPU.intel?
       url "https://github.com/dotzenith/AvatarSay/releases/download/v0.1.1/avatarsay-x86_64-apple-darwin.tar.xz"
-      sha256 "4eb0d4303f6f191fa0826c6476cb181ef1ff3e1818be5dc53f22d29d9b67fa1c"
+      sha256 "f8188d3d475c02febf5080f664441a2ca682b43d50a3091e647144bf36aa1608"
     end
   end
   if OS.linux? && Hardware::CPU.intel?
     url "https://github.com/dotzenith/AvatarSay/releases/download/v0.1.1/avatarsay-x86_64-unknown-linux-gnu.tar.xz"
-    sha256 "d5d47f3eb737463c1176a6588b9c854a63ca5cb96147fe86798df6bfc39003e9"
+    sha256 "c6fe9ce2c5e4131f43a4a35ba5108c72e1e858ad4a77db1c5bb23b93812926db"
   end
   license "MIT"
 
