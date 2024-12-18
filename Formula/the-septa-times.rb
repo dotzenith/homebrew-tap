@@ -1,25 +1,25 @@
 class TheSeptaTimes < Formula
-  desc "A CLI application for the SEPTA API"
+  desc "A SEPTA app for the terminal"
   homepage "https://github.com/dotzenith/TheSeptaTimes.rs"
-  version "0.9.2"
+  version "0.9.3"
   if OS.mac?
     if Hardware::CPU.arm?
-      url "https://github.com/dotzenith/TheSeptaTimes.rs/releases/download/v0.9.2/the-septa-times-aarch64-apple-darwin.tar.xz"
-      sha256 "a4d255a9efc238614cb3fdcce74cd03056c93623b3d13210640670d88b44721d"
+      url "https://github.com/dotzenith/TheSeptaTimes.rs/releases/download/v0.9.3/the-septa-times-aarch64-apple-darwin.tar.xz"
+      sha256 "e875d2be66277a8331ada4aaf953136e29689cacacf0bfa998c084abdfe28072"
     end
     if Hardware::CPU.intel?
-      url "https://github.com/dotzenith/TheSeptaTimes.rs/releases/download/v0.9.2/the-septa-times-x86_64-apple-darwin.tar.xz"
-      sha256 "8c35638a2318fb5b14fb309f0114ea8d8a478e101f2e13730d86716769e3e0b2"
+      url "https://github.com/dotzenith/TheSeptaTimes.rs/releases/download/v0.9.3/the-septa-times-x86_64-apple-darwin.tar.xz"
+      sha256 "ab10bd6161889bc57af2e496b182b4b37955d8973816e516ae8f848b0613889e"
     end
   end
   if OS.linux?
     if Hardware::CPU.arm?
-      url "https://github.com/dotzenith/TheSeptaTimes.rs/releases/download/v0.9.2/the-septa-times-aarch64-unknown-linux-gnu.tar.xz"
-      sha256 "39831579131416c54a878ca03203b9c8717bf0fbd0bcba8a0594969c7a3e6131"
+      url "https://github.com/dotzenith/TheSeptaTimes.rs/releases/download/v0.9.3/the-septa-times-aarch64-unknown-linux-gnu.tar.xz"
+      sha256 "e50739aa33e0e0b247eaf63da2e78dac87d5565638d8ab2a2be1f9e80536e2c3"
     end
     if Hardware::CPU.intel?
-      url "https://github.com/dotzenith/TheSeptaTimes.rs/releases/download/v0.9.2/the-septa-times-x86_64-unknown-linux-gnu.tar.xz"
-      sha256 "9abbaaccda380a205501b41f3457bed88a3cf2c9ef8ae61cba41dcf9a4b8da1e"
+      url "https://github.com/dotzenith/TheSeptaTimes.rs/releases/download/v0.9.3/the-septa-times-x86_64-unknown-linux-gnu.tar.xz"
+      sha256 "c8829cfaa204554b11afc4ebe8dff914c1f44d32199ff501985e9b579a5a9696"
     end
   end
   license "MIT"
