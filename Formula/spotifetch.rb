@@ -1,25 +1,25 @@
 class Spotifetch < Formula
   desc "A simple and beautiful fetch tool for spotify, now rusty :) "
   homepage "https://github.com/dotzenith/SpotiFetch.rs"
-  version "0.1.6"
+  version "0.1.7"
   if OS.mac?
     if Hardware::CPU.arm?
-      url "https://github.com/dotzenith/SpotiFetch.rs/releases/download/v0.1.6/spotifetch-aarch64-apple-darwin.tar.xz"
-      sha256 "c1e8e64f9dd29e12811bb0386643f13cb98362ce5802d54d4a90544e1f1929cb"
+      url "https://github.com/dotzenith/SpotiFetch.rs/releases/download/v0.1.7/spotifetch-aarch64-apple-darwin.tar.xz"
+      sha256 "5db47b25375fb8b8d0298e004f00717a385b79ea60782e73e0a104d05bfab7b6"
     end
     if Hardware::CPU.intel?
-      url "https://github.com/dotzenith/SpotiFetch.rs/releases/download/v0.1.6/spotifetch-x86_64-apple-darwin.tar.xz"
-      sha256 "384e1a7eea0ea316ef54c698d7558d35daf75fc54f36bd3d40b8a3e29ecef4ba"
+      url "https://github.com/dotzenith/SpotiFetch.rs/releases/download/v0.1.7/spotifetch-x86_64-apple-darwin.tar.xz"
+      sha256 "101117663685da30ddf74f396f37460be0fe51dd6f650f7e1376e36ae88fc17b"
     end
   end
   if OS.linux?
     if Hardware::CPU.arm?
-      url "https://github.com/dotzenith/SpotiFetch.rs/releases/download/v0.1.6/spotifetch-aarch64-unknown-linux-gnu.tar.xz"
-      sha256 "dfd1e9982dd5383e3d318118e9c738666ff586a04a0963cc72884dcda34001d0"
+      url "https://github.com/dotzenith/SpotiFetch.rs/releases/download/v0.1.7/spotifetch-aarch64-unknown-linux-gnu.tar.xz"
+      sha256 "47b8c5d4320759164f3e1653921a664228ac98d7b347598c5c2fa8dedd1f306f"
     end
     if Hardware::CPU.intel?
-      url "https://github.com/dotzenith/SpotiFetch.rs/releases/download/v0.1.6/spotifetch-x86_64-unknown-linux-gnu.tar.xz"
-      sha256 "6d77c222d0254498f5cfee883f1d5997af8b896d7ae2a0af9fda02df44cd6a87"
+      url "https://github.com/dotzenith/SpotiFetch.rs/releases/download/v0.1.7/spotifetch-x86_64-unknown-linux-gnu.tar.xz"
+      sha256 "41a3d10ca94ebed91df1e0e32d14b53914b69ea6ae7c9c197343573df09f720e"
     end
   end
   license "MIT"
