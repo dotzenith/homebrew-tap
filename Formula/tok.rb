@@ -1,25 +1,25 @@
 class Tok < Formula
   desc "A CLI client for tick tick"
   homepage "https://github.com/dotzenith/tok"
-  version "0.1.1"
+  version "0.1.2"
   if OS.mac?
     if Hardware::CPU.arm?
-      url "https://github.com/dotzenith/tok/releases/download/v0.1.1/tok-aarch64-apple-darwin.tar.xz"
-      sha256 "564ae0c65683f5fcf821ded820a17e48218b8a59515e72fb2711bfbbeb03fe5f"
+      url "https://github.com/dotzenith/tok/releases/download/v0.1.2/tok-aarch64-apple-darwin.tar.xz"
+      sha256 "c7864dbbb484661e388185fdfdd1de58ce1f90e6429bb3f9d40478a0d91b80c5"
     end
     if Hardware::CPU.intel?
-      url "https://github.com/dotzenith/tok/releases/download/v0.1.1/tok-x86_64-apple-darwin.tar.xz"
-      sha256 "eee572f9380d2d25c10d171368120307abb788abe1272533a7fa7c74d8270b08"
+      url "https://github.com/dotzenith/tok/releases/download/v0.1.2/tok-x86_64-apple-darwin.tar.xz"
+      sha256 "418411df5c2142ede01edadb64b34950f178f315eb7a7bf919f7e4ec75ebc940"
     end
   end
   if OS.linux?
     if Hardware::CPU.arm?
-      url "https://github.com/dotzenith/tok/releases/download/v0.1.1/tok-aarch64-unknown-linux-gnu.tar.xz"
-      sha256 "660b596fa6e00662e54861c2c4b3856e4af1c19fd255ea9e20134262f9b2553a"
+      url "https://github.com/dotzenith/tok/releases/download/v0.1.2/tok-aarch64-unknown-linux-gnu.tar.xz"
+      sha256 "5b93f7bde464cec100e042402bb4de50f02a4f6c3a8bfcbf4aeae22ad70ab266"
     end
     if Hardware::CPU.intel?
-      url "https://github.com/dotzenith/tok/releases/download/v0.1.1/tok-x86_64-unknown-linux-gnu.tar.xz"
-      sha256 "3cefb20791959e5aa1eebe75f05a0ec656a323ec60277bb44e2f07f08e842e4f"
+      url "https://github.com/dotzenith/tok/releases/download/v0.1.2/tok-x86_64-unknown-linux-gnu.tar.xz"
+      sha256 "1f92074758e4518cfeb3fa4d4773ef89dadafc696f89340946ddbb901a6a2956"
     end
   end
   license "MIT"
