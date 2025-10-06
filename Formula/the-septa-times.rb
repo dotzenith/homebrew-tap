@@ -1,25 +1,25 @@
 class TheSeptaTimes < Formula
   desc "A SEPTA app for the terminal"
   homepage "https://github.com/dotzenith/TheSeptaTimes.rs"
-  version "0.9.8"
+  version "0.9.9"
   if OS.mac?
     if Hardware::CPU.arm?
-      url "https://github.com/dotzenith/TheSeptaTimes.rs/releases/download/v0.9.8/the-septa-times-aarch64-apple-darwin.tar.xz"
-      sha256 "faf9656002060f951ed1cd7131075b64a27e717c43ba94662ea5a952c7627e3b"
+      url "https://github.com/dotzenith/TheSeptaTimes.rs/releases/download/v0.9.9/the-septa-times-aarch64-apple-darwin.tar.xz"
+      sha256 "8c53612668618795eb0c206c1a605709add90fe30b2abc71fa3a0b5e446ed568"
     end
     if Hardware::CPU.intel?
-      url "https://github.com/dotzenith/TheSeptaTimes.rs/releases/download/v0.9.8/the-septa-times-x86_64-apple-darwin.tar.xz"
-      sha256 "37c5e574d1b49e45c72bc388046d20f265e074776f9a4e2b98dd670091d996ca"
+      url "https://github.com/dotzenith/TheSeptaTimes.rs/releases/download/v0.9.9/the-septa-times-x86_64-apple-darwin.tar.xz"
+      sha256 "9901b3a4a5d1b5faa850f88a6814293f3db943e5c72fdcfe9075da5a614c36c5"
     end
   end
   if OS.linux?
     if Hardware::CPU.arm?
-      url "https://github.com/dotzenith/TheSeptaTimes.rs/releases/download/v0.9.8/the-septa-times-aarch64-unknown-linux-gnu.tar.xz"
-      sha256 "40bc40b742917a01cdd66fdd75d63990cdb49510a944a7fb0d41626473a4931e"
+      url "https://github.com/dotzenith/TheSeptaTimes.rs/releases/download/v0.9.9/the-septa-times-aarch64-unknown-linux-gnu.tar.xz"
+      sha256 "fc44a5b43d5212d760bd7b8cfedf0d125a3ea8c37340d45bc8c9c2504ae08540"
     end
     if Hardware::CPU.intel?
-      url "https://github.com/dotzenith/TheSeptaTimes.rs/releases/download/v0.9.8/the-septa-times-x86_64-unknown-linux-gnu.tar.xz"
-      sha256 "2e3c2418f3eeded42b71a9a6106cf94e2d090f673f9b1ff08a9e29e166413708"
+      url "https://github.com/dotzenith/TheSeptaTimes.rs/releases/download/v0.9.9/the-septa-times-x86_64-unknown-linux-gnu.tar.xz"
+      sha256 "5d863b2d63f0a53c093446671f4ce0aad007017ad7bb26bad27d4114fe7a7a29"
     end
   end
   license "MIT"
