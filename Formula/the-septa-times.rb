@@ -1,25 +1,25 @@
 class TheSeptaTimes < Formula
   desc "A SEPTA app for the terminal"
   homepage "https://github.com/dotzenith/TheSeptaTimes.rs"
-  version "0.9.10"
+  version "0.10.0"
   if OS.mac?
     if Hardware::CPU.arm?
-      url "https://github.com/dotzenith/TheSeptaTimes.rs/releases/download/v0.9.10/the-septa-times-aarch64-apple-darwin.tar.xz"
-      sha256 "8fbd05917475723271409dd15f9ce7d3ba52eb81f447f0aa488e45b53586db1d"
+      url "https://github.com/dotzenith/TheSeptaTimes.rs/releases/download/v0.10.0/the-septa-times-aarch64-apple-darwin.tar.xz"
+      sha256 "5466468c41471b13f3f68b9768dfee284ae3b4c9633421e70254de003847ca92"
     end
     if Hardware::CPU.intel?
-      url "https://github.com/dotzenith/TheSeptaTimes.rs/releases/download/v0.9.10/the-septa-times-x86_64-apple-darwin.tar.xz"
-      sha256 "f6869beef02dadf0d3cedcaf104077e6aebf86a4ad61526c45f89343659b9f17"
+      url "https://github.com/dotzenith/TheSeptaTimes.rs/releases/download/v0.10.0/the-septa-times-x86_64-apple-darwin.tar.xz"
+      sha256 "3db54f5dece8075e5b97f8fa89dda7b5a8355c427af4310933bfddb66494455d"
     end
   end
   if OS.linux?
     if Hardware::CPU.arm?
-      url "https://github.com/dotzenith/TheSeptaTimes.rs/releases/download/v0.9.10/the-septa-times-aarch64-unknown-linux-gnu.tar.xz"
-      sha256 "45bcd163c9753df34f1b54c3790dd199a50e26604adf5efa44f48812cce83145"
+      url "https://github.com/dotzenith/TheSeptaTimes.rs/releases/download/v0.10.0/the-septa-times-aarch64-unknown-linux-gnu.tar.xz"
+      sha256 "d9024b4e5802e92eaa2ab475e04be4423bceb8f300052651e45bb15e94b81987"
     end
     if Hardware::CPU.intel?
-      url "https://github.com/dotzenith/TheSeptaTimes.rs/releases/download/v0.9.10/the-septa-times-x86_64-unknown-linux-gnu.tar.xz"
-      sha256 "93597fd45431a1fce5f0b6eca9391801a85d9e8ec3b167c24faf4637894a5a8d"
+      url "https://github.com/dotzenith/TheSeptaTimes.rs/releases/download/v0.10.0/the-septa-times-x86_64-unknown-linux-gnu.tar.xz"
+      sha256 "93ebf12370b294e8b22b06e7e4bcadf7432f580e405244cf2aa1e2ef191c5e41"
     end
   end
   license "MIT"
