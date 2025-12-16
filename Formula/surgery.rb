@@ -1,25 +1,25 @@
 class Surgery < Formula
   desc "A simple CLI for Real Debrid "
   homepage "https://github.com/dotzenith/surgery"
-  version "0.1.0"
+  version "1.0.0"
   if OS.mac?
     if Hardware::CPU.arm?
-      url "https://github.com/dotzenith/surgery/releases/download/v0.1.0/surgery-aarch64-apple-darwin.tar.xz"
-      sha256 "810e498002c94e46e7a713b7b6059cf3ee9b216901ccda24dd1656badfea1ba0"
+      url "https://github.com/dotzenith/surgery/releases/download/v1.0.0/surgery-aarch64-apple-darwin.tar.xz"
+      sha256 "4237b30477a64269c84344e4fe3a341de3f44c74a9be5b48c2026278e1cb3e3f"
     end
     if Hardware::CPU.intel?
-      url "https://github.com/dotzenith/surgery/releases/download/v0.1.0/surgery-x86_64-apple-darwin.tar.xz"
-      sha256 "b7344ff3eed9629879481bca8aa82d82f511a8b65f9566889895448f23b3b3a4"
+      url "https://github.com/dotzenith/surgery/releases/download/v1.0.0/surgery-x86_64-apple-darwin.tar.xz"
+      sha256 "f6d473dddb2f721d24edd0aefbc1d89758a5c65ba1d6467d00590b7a4f65d7a7"
     end
   end
   if OS.linux?
     if Hardware::CPU.arm?
-      url "https://github.com/dotzenith/surgery/releases/download/v0.1.0/surgery-aarch64-unknown-linux-gnu.tar.xz"
-      sha256 "b733847c74fe0b7aaaec05d89b65a43d46b65cec7a51f9844fc4dc958944ab69"
+      url "https://github.com/dotzenith/surgery/releases/download/v1.0.0/surgery-aarch64-unknown-linux-gnu.tar.xz"
+      sha256 "84ad79db65c1c9db109c8a35553d82ce1c923a569094974950eea421cf594981"
     end
     if Hardware::CPU.intel?
-      url "https://github.com/dotzenith/surgery/releases/download/v0.1.0/surgery-x86_64-unknown-linux-gnu.tar.xz"
-      sha256 "e3ef91da41dc858573cf25d3425bdc80761cdc29c6961abd265a228f9d5306eb"
+      url "https://github.com/dotzenith/surgery/releases/download/v1.0.0/surgery-x86_64-unknown-linux-gnu.tar.xz"
+      sha256 "29e9564cc26c2402933a58909d44fe7d7e32d25d304a96c7901ce9b6bb2d7aeb"
     end
   end
   license "MIT"
