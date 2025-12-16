@@ -1,25 +1,25 @@
 class Surgery < Formula
   desc "A simple CLI for Real Debrid "
   homepage "https://github.com/dotzenith/surgery"
-  version "1.0.0"
+  version "1.1.0"
   if OS.mac?
     if Hardware::CPU.arm?
-      url "https://github.com/dotzenith/surgery/releases/download/v1.0.0/surgery-aarch64-apple-darwin.tar.xz"
-      sha256 "4237b30477a64269c84344e4fe3a341de3f44c74a9be5b48c2026278e1cb3e3f"
+      url "https://github.com/dotzenith/surgery/releases/download/v1.1.0/surgery-aarch64-apple-darwin.tar.xz"
+      sha256 "640ce820006f770c11208065f24d195a59e0ebb031dcf18502ce93441c7e4178"
     end
     if Hardware::CPU.intel?
-      url "https://github.com/dotzenith/surgery/releases/download/v1.0.0/surgery-x86_64-apple-darwin.tar.xz"
-      sha256 "f6d473dddb2f721d24edd0aefbc1d89758a5c65ba1d6467d00590b7a4f65d7a7"
+      url "https://github.com/dotzenith/surgery/releases/download/v1.1.0/surgery-x86_64-apple-darwin.tar.xz"
+      sha256 "149a4e199fb7f14bed647b9e61c2d1fefd8bfc67f89fe0fcae1ae4f5234ec747"
     end
   end
   if OS.linux?
     if Hardware::CPU.arm?
-      url "https://github.com/dotzenith/surgery/releases/download/v1.0.0/surgery-aarch64-unknown-linux-gnu.tar.xz"
-      sha256 "84ad79db65c1c9db109c8a35553d82ce1c923a569094974950eea421cf594981"
+      url "https://github.com/dotzenith/surgery/releases/download/v1.1.0/surgery-aarch64-unknown-linux-gnu.tar.xz"
+      sha256 "219a8285c320ce54244db97e2d9263589f459952f625dad946987b5c178c57e7"
     end
     if Hardware::CPU.intel?
-      url "https://github.com/dotzenith/surgery/releases/download/v1.0.0/surgery-x86_64-unknown-linux-gnu.tar.xz"
-      sha256 "29e9564cc26c2402933a58909d44fe7d7e32d25d304a96c7901ce9b6bb2d7aeb"
+      url "https://github.com/dotzenith/surgery/releases/download/v1.1.0/surgery-x86_64-unknown-linux-gnu.tar.xz"
+      sha256 "93306a1ecb29a67ccac7a2d0dbb0413d84a54d883ed4387fc13bf49d85a8f966"
     end
   end
   license "MIT"
@@ -48,10 +48,10 @@ class Surgery < Formula
   end
 
   def install
-    bin.install "sg" if OS.mac? && Hardware::CPU.arm?
-    bin.install "sg" if OS.mac? && Hardware::CPU.intel?
-    bin.install "sg" if OS.linux? && Hardware::CPU.arm?
-    bin.install "sg" if OS.linux? && Hardware::CPU.intel?
+    bin.install "srg" if OS.mac? && Hardware::CPU.arm?
+    bin.install "srg" if OS.mac? && Hardware::CPU.intel?
+    bin.install "srg" if OS.linux? && Hardware::CPU.arm?
+    bin.install "srg" if OS.linux? && Hardware::CPU.intel?
 
     install_binary_aliases!
 
