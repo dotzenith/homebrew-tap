@@ -1,39 +1,37 @@
 class Lovesay < Formula
   desc "lovesay but rusty"
   homepage "https://github.com/dotzenith/lovesay.rs"
-  version "1.0.3"
+  version "1.0.4"
   if OS.mac?
     if Hardware::CPU.arm?
-      url "https://github.com/dotzenith/lovesay.rs/releases/download/v1.0.3/lovesay-aarch64-apple-darwin.tar.xz"
-      sha256 "409b8147ecebfbfd1d1ad2193f9185227590902fab58391d599c7fe189ef9e4e"
+      url "https://github.com/dotzenith/lovesay.rs/releases/download/v1.0.4/lovesay-aarch64-apple-darwin.tar.xz"
+      sha256 "73977f8ee51cf194b2b3710262ceb6a0381ffcf1e5b38ac762aafd2f97206740"
     end
     if Hardware::CPU.intel?
-      url "https://github.com/dotzenith/lovesay.rs/releases/download/v1.0.3/lovesay-x86_64-apple-darwin.tar.xz"
-      sha256 "cce77288c431e0e9b46f53896015234a470479bc845e631fc6216004787339f4"
+      url "https://github.com/dotzenith/lovesay.rs/releases/download/v1.0.4/lovesay-x86_64-apple-darwin.tar.xz"
+      sha256 "281577a9951cf4afd5e7b72b98feafceb30b7e6a9e80e31a14c23ffcbceb4d61"
     end
   end
   if OS.linux?
     if Hardware::CPU.arm?
-      url "https://github.com/dotzenith/lovesay.rs/releases/download/v1.0.3/lovesay-aarch64-unknown-linux-gnu.tar.xz"
-      sha256 "79dc97f8c5eec26622d17f1f1c9797dcf3c3044f68511054c7a26cfbf27a7ba8"
+      url "https://github.com/dotzenith/lovesay.rs/releases/download/v1.0.4/lovesay-aarch64-unknown-linux-gnu.tar.xz"
+      sha256 "9631aa058c6eea7def8c46ac08a182fbebb8ad6e8f32a032fc53b7ba3b276c87"
     end
     if Hardware::CPU.intel?
-      url "https://github.com/dotzenith/lovesay.rs/releases/download/v1.0.3/lovesay-x86_64-unknown-linux-gnu.tar.xz"
-      sha256 "0aefaa8ff2dd494c4b7e248d0e04d6ac798cca9e05fab0f257bb99e4502b9034"
+      url "https://github.com/dotzenith/lovesay.rs/releases/download/v1.0.4/lovesay-x86_64-unknown-linux-gnu.tar.xz"
+      sha256 "b6b51a55588e9b0e0bda56c9f460d4a33a0377bbaefe8f970dc01c567052aec2"
     end
   end
   license "MIT"
 
   BINARY_ALIASES = {
-    "aarch64-apple-darwin":               {},
-    "aarch64-unknown-linux-gnu":          {},
-    "aarch64-unknown-linux-musl-dynamic": {},
-    "aarch64-unknown-linux-musl-static":  {},
-    "x86_64-apple-darwin":                {},
-    "x86_64-pc-windows-gnu":              {},
-    "x86_64-unknown-linux-gnu":           {},
-    "x86_64-unknown-linux-musl-dynamic":  {},
-    "x86_64-unknown-linux-musl-static":   {},
+    "aarch64-apple-darwin":              {},
+    "aarch64-unknown-linux-gnu":         {},
+    "x86_64-apple-darwin":               {},
+    "x86_64-pc-windows-gnu":             {},
+    "x86_64-unknown-linux-gnu":          {},
+    "x86_64-unknown-linux-musl-dynamic": {},
+    "x86_64-unknown-linux-musl-static":  {},
   }.freeze
 
   def target_triple
