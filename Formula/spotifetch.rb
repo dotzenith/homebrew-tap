@@ -1,37 +1,35 @@
 class Spotifetch < Formula
   desc "A simple and beautiful fetch tool for spotify, now rusty :) "
   homepage "https://github.com/dotzenith/SpotiFetch.rs"
-  version "0.1.8"
+  version "0.1.9"
   if OS.mac?
     if Hardware::CPU.arm?
-      url "https://github.com/dotzenith/SpotiFetch.rs/releases/download/v0.1.8/spotifetch-aarch64-apple-darwin.tar.xz"
-      sha256 "be3b15f9d435ca7a5a72ac9f946ef1ab964eebf56ddf2e60c084349171fc7d7f"
+      url "https://github.com/dotzenith/SpotiFetch.rs/releases/download/v0.1.9/spotifetch-aarch64-apple-darwin.tar.xz"
+      sha256 "e19e37d044f35df10bdc4be181e4c102d044a770c08a42449bfec2c13d91a950"
     end
     if Hardware::CPU.intel?
-      url "https://github.com/dotzenith/SpotiFetch.rs/releases/download/v0.1.8/spotifetch-x86_64-apple-darwin.tar.xz"
-      sha256 "7ba4f3f58edd273f909f727047ce1d5d4ca51aa705ac8ba903238a4075584b80"
+      url "https://github.com/dotzenith/SpotiFetch.rs/releases/download/v0.1.9/spotifetch-x86_64-apple-darwin.tar.xz"
+      sha256 "9d00ae084b681200ca8406f8a0ca1b564f459dbd032547fe4b0a81cb41d90bb3"
     end
   end
   if OS.linux?
     if Hardware::CPU.arm?
-      url "https://github.com/dotzenith/SpotiFetch.rs/releases/download/v0.1.8/spotifetch-aarch64-unknown-linux-gnu.tar.xz"
-      sha256 "1740ff67be3b559d0f3582ebd16f84fc80e89f5163ec581bf8acf08cf9c53993"
+      url "https://github.com/dotzenith/SpotiFetch.rs/releases/download/v0.1.9/spotifetch-aarch64-unknown-linux-gnu.tar.xz"
+      sha256 "b9b7c7082f7d73304d8acc5f560f141bb93b26994501487d59a34c7dd4477536"
     end
     if Hardware::CPU.intel?
-      url "https://github.com/dotzenith/SpotiFetch.rs/releases/download/v0.1.8/spotifetch-x86_64-unknown-linux-gnu.tar.xz"
-      sha256 "61e5cb09043455ba9dd985d119b1fdb1abcce73be88490cc3695adc5c4697d10"
+      url "https://github.com/dotzenith/SpotiFetch.rs/releases/download/v0.1.9/spotifetch-x86_64-unknown-linux-gnu.tar.xz"
+      sha256 "8fc9b7579901bd288b6e118e834683379a0e33ed8b888b0ca83a05ec57ea80e2"
     end
   end
   license "MIT"
 
   BINARY_ALIASES = {
-    "aarch64-apple-darwin":              {},
-    "aarch64-unknown-linux-gnu":         {},
-    "x86_64-apple-darwin":               {},
-    "x86_64-pc-windows-gnu":             {},
-    "x86_64-unknown-linux-gnu":          {},
-    "x86_64-unknown-linux-musl-dynamic": {},
-    "x86_64-unknown-linux-musl-static":  {},
+    "aarch64-apple-darwin":      {},
+    "aarch64-unknown-linux-gnu": {},
+    "x86_64-apple-darwin":       {},
+    "x86_64-pc-windows-gnu":     {},
+    "x86_64-unknown-linux-gnu":  {},
   }.freeze
 
   def target_triple
