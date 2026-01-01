@@ -1,25 +1,25 @@
 class TheSeptaTimes < Formula
   desc "A SEPTA app for the terminal"
   homepage "https://github.com/dotzenith/TheSeptaTimes.rs"
-  version "0.11.2"
+  version "0.11.3"
   if OS.mac?
     if Hardware::CPU.arm?
-      url "https://github.com/dotzenith/TheSeptaTimes.rs/releases/download/v0.11.2/the-septa-times-aarch64-apple-darwin.tar.xz"
-      sha256 "26ec2b57e92f7a4b1ae65a2bd7a74f32b9e55a786f1611d3d3051c9466411616"
+      url "https://github.com/dotzenith/TheSeptaTimes.rs/releases/download/v0.11.3/the-septa-times-aarch64-apple-darwin.tar.xz"
+      sha256 "b24b5810849afbef6a52477ed4c61c053319de20aec4b21ae1c9fdb988a56012"
     end
     if Hardware::CPU.intel?
-      url "https://github.com/dotzenith/TheSeptaTimes.rs/releases/download/v0.11.2/the-septa-times-x86_64-apple-darwin.tar.xz"
-      sha256 "e5efc278f28076472443df80fdda4728ab00672147dbdf5f33e4e8945446586a"
+      url "https://github.com/dotzenith/TheSeptaTimes.rs/releases/download/v0.11.3/the-septa-times-x86_64-apple-darwin.tar.xz"
+      sha256 "426ffb40639f2fd45f1b1f6a4303936f73e4ee298c4cdc30d81e389a2f5fa70f"
     end
   end
   if OS.linux?
     if Hardware::CPU.arm?
-      url "https://github.com/dotzenith/TheSeptaTimes.rs/releases/download/v0.11.2/the-septa-times-aarch64-unknown-linux-gnu.tar.xz"
-      sha256 "2b2b896a2896b803c87aba77fd2be192185668d0add005b9f798072e73a33559"
+      url "https://github.com/dotzenith/TheSeptaTimes.rs/releases/download/v0.11.3/the-septa-times-aarch64-unknown-linux-gnu.tar.xz"
+      sha256 "9e2b8d78932ae22e49c0b9a01dde0948065751e108fbfcacb4f5bb800d87a70c"
     end
     if Hardware::CPU.intel?
-      url "https://github.com/dotzenith/TheSeptaTimes.rs/releases/download/v0.11.2/the-septa-times-x86_64-unknown-linux-gnu.tar.xz"
-      sha256 "e3e2e53f750639c5dbfbb076b46cffd9c2811e4f0e00328859f035ac918f06cf"
+      url "https://github.com/dotzenith/TheSeptaTimes.rs/releases/download/v0.11.3/the-septa-times-x86_64-unknown-linux-gnu.tar.xz"
+      sha256 "06f71a0d8d0ded64971f400ce5bb5b439b88c7dd4e4a0f783468387b8b58e7a8"
     end
   end
   license "MIT"
