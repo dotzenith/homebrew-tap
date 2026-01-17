@@ -1,25 +1,25 @@
 class Lovesay < Formula
   desc "lovesay but rusty"
   homepage "https://github.com/dotzenith/lovesay.rs"
-  version "1.0.5"
+  version "1.0.6"
   if OS.mac?
     if Hardware::CPU.arm?
-      url "https://github.com/dotzenith/lovesay.rs/releases/download/v1.0.5/lovesay-aarch64-apple-darwin.tar.xz"
-      sha256 "3e299e600a9730db5cd6658c7a44b5aafba28fc0d4b1df760494cf45841858bf"
+      url "https://github.com/dotzenith/lovesay.rs/releases/download/v1.0.6/lovesay-aarch64-apple-darwin.tar.xz"
+      sha256 "2ae48211c1ddf5a4534add2efdd5b05ec80254665e133318129618a5050e19d7"
     end
     if Hardware::CPU.intel?
-      url "https://github.com/dotzenith/lovesay.rs/releases/download/v1.0.5/lovesay-x86_64-apple-darwin.tar.xz"
-      sha256 "6258a8763d3fe5660df62b5fcd6b343de87bc9415922f40f030fce93a521e92f"
+      url "https://github.com/dotzenith/lovesay.rs/releases/download/v1.0.6/lovesay-x86_64-apple-darwin.tar.xz"
+      sha256 "351166b9c91e2584f0953b66cf4c2551c81b28bbc865fa719436f2896da32411"
     end
   end
   if OS.linux?
     if Hardware::CPU.arm?
-      url "https://github.com/dotzenith/lovesay.rs/releases/download/v1.0.5/lovesay-aarch64-unknown-linux-gnu.tar.xz"
-      sha256 "0321d852286fe106a2670c9920ea44af72187654b12749fb8cad0b18cd969515"
+      url "https://github.com/dotzenith/lovesay.rs/releases/download/v1.0.6/lovesay-aarch64-unknown-linux-gnu.tar.xz"
+      sha256 "7b585aac98c84b381baa457ae9e77107f96f1ceaf7dbf877e095cfca5b71c811"
     end
     if Hardware::CPU.intel?
-      url "https://github.com/dotzenith/lovesay.rs/releases/download/v1.0.5/lovesay-x86_64-unknown-linux-gnu.tar.xz"
-      sha256 "db0c0ed35d02df900569f86e050d4065cae123932866c43c9a3f88a6a781802c"
+      url "https://github.com/dotzenith/lovesay.rs/releases/download/v1.0.6/lovesay-x86_64-unknown-linux-gnu.tar.xz"
+      sha256 "b89c3929722a5733fa2e55a62c9fcc7e8d64f231f1cd887885cf7dd2b2db6899"
     end
   end
   license "MIT"
