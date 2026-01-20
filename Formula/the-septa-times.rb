@@ -5,21 +5,21 @@ class TheSeptaTimes < Formula
   if OS.mac?
     if Hardware::CPU.arm?
       url "https://github.com/dotzenith/TheSeptaTimes.rs/releases/download/v0.12.1/the-septa-times-aarch64-apple-darwin.tar.xz"
-      sha256 "5510d00ea5ed90c2fc7f36d3bd6eeee4f3cda2ad9519c3103c888ee2e385156a"
+      sha256 "90e0cd7a1cfe127670f387f9c782d137f592eabe2c171057fbdeada27544b162"
     end
     if Hardware::CPU.intel?
       url "https://github.com/dotzenith/TheSeptaTimes.rs/releases/download/v0.12.1/the-septa-times-x86_64-apple-darwin.tar.xz"
-      sha256 "b996d86c664bab6017c3a4418ebc2559304c560d6ed5cf550d6c8460643c67a0"
+      sha256 "4e27bbd849f4d5ec273890c4982521a3110c36196cbcc562db47dffcbd2724c8"
     end
   end
   if OS.linux?
     if Hardware::CPU.arm?
       url "https://github.com/dotzenith/TheSeptaTimes.rs/releases/download/v0.12.1/the-septa-times-aarch64-unknown-linux-gnu.tar.xz"
-      sha256 "3e6f6fc6d29aadafd541e3cb575b6096f2366e8905e1e691c49948cca87af728"
+      sha256 "e675ba02ec48943e62c883cb6a05521321f43c0d9b247ce73f9833812dbdb352"
     end
     if Hardware::CPU.intel?
       url "https://github.com/dotzenith/TheSeptaTimes.rs/releases/download/v0.12.1/the-septa-times-x86_64-unknown-linux-gnu.tar.xz"
-      sha256 "fa07d70c4c110a664186f192ad0f08dd8940c118bf08363a305260382d3b3a9c"
+      sha256 "70509dc00ca04df2adec5554c790de5f60708a00134c17bcb7900ce5be1d67b4"
     end
   end
   license "MIT"
