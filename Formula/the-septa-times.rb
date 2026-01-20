@@ -42,6 +42,8 @@ class TheSeptaTimes < Formula
   end
 
   def install_binary_aliases!
+\n    # Generate and install shell completions
+    generate_completions_from_executable(bin/"tst", "completions")
     BINARY_ALIASES[target_triple.to_sym].each do |source, dests|
       dests.each do |dest|
         bin.install_symlink bin/source.to_s => dest
@@ -56,6 +58,8 @@ class TheSeptaTimes < Formula
     bin.install "tst" if OS.linux? && Hardware::CPU.intel?
 
     install_binary_aliases!
+\n    # Generate and install shell completions
+    generate_completions_from_executable(bin/"tst", "completions")
 
     # Homebrew will automatically install these, so we don't need to do that
     doc_files = Dir["README.*", "readme.*", "LICENSE", "LICENSE.*", "CHANGELOG.*"]
