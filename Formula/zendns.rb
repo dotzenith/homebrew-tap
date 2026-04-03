@@ -1,25 +1,25 @@
 class Zendns < Formula
   desc "Manage Dynamic DNS with serenity"
   homepage "https://github.com/dotzenith/ZenDNS"
-  version "1.1.0"
+  version "1.1.1"
   if OS.mac?
     if Hardware::CPU.arm?
-      url "https://github.com/dotzenith/ZenDNS/releases/download/v1.1.0/zendns-aarch64-apple-darwin.tar.xz"
-      sha256 "d5420c488f6f12d616a93be551b5476186ff0d72c96900f2dff3c86fe700b2fc"
+      url "https://github.com/dotzenith/ZenDNS/releases/download/v1.1.1/zendns-aarch64-apple-darwin.tar.xz"
+      sha256 "3058fe8a5056166b238914df6cc487557a33ffea06c28973114c922545008ae7"
     end
     if Hardware::CPU.intel?
-      url "https://github.com/dotzenith/ZenDNS/releases/download/v1.1.0/zendns-x86_64-apple-darwin.tar.xz"
-      sha256 "0f7201794da9af6a772f63582e8814dc51b00cb0f3422a33f7cdec392b5ab291"
+      url "https://github.com/dotzenith/ZenDNS/releases/download/v1.1.1/zendns-x86_64-apple-darwin.tar.xz"
+      sha256 "384645d394b2e63da80b67d84fe2a1138be67379b6af9433cd0561ba6d1aebb4"
     end
   end
   if OS.linux?
     if Hardware::CPU.arm?
-      url "https://github.com/dotzenith/ZenDNS/releases/download/v1.1.0/zendns-aarch64-unknown-linux-gnu.tar.xz"
-      sha256 "9de3f115de4b0309c0ff99fc08cc5c9007a2d7b99d171c44cf0c46746ed1fc4e"
+      url "https://github.com/dotzenith/ZenDNS/releases/download/v1.1.1/zendns-aarch64-unknown-linux-gnu.tar.xz"
+      sha256 "22926a046a5284055ecd4db0c61d05654f35734ffb6bd84c16379ec44a3f4dc3"
     end
     if Hardware::CPU.intel?
-      url "https://github.com/dotzenith/ZenDNS/releases/download/v1.1.0/zendns-x86_64-unknown-linux-gnu.tar.xz"
-      sha256 "851a8b007c443efdbd1a4fbff6efa4976fa7d274677aec172486e61bb0766a1a"
+      url "https://github.com/dotzenith/ZenDNS/releases/download/v1.1.1/zendns-x86_64-unknown-linux-gnu.tar.xz"
+      sha256 "02607f2c11cf131159bc53a069c86fa40ba9f86f27c5e8f27d7b8198409aec54"
     end
   end
   license "MIT"
