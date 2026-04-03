@@ -1,25 +1,25 @@
 class TheSeptaTimes < Formula
   desc "A SEPTA app for the terminal"
   homepage "https://github.com/dotzenith/TheSeptaTimes.rs"
-  version "0.12.1"
+  version "0.12.2"
   if OS.mac?
     if Hardware::CPU.arm?
-      url "https://github.com/dotzenith/TheSeptaTimes.rs/releases/download/v0.12.1/the-septa-times-aarch64-apple-darwin.tar.xz"
-      sha256 "90e0cd7a1cfe127670f387f9c782d137f592eabe2c171057fbdeada27544b162"
+      url "https://github.com/dotzenith/TheSeptaTimes.rs/releases/download/v0.12.2/the-septa-times-aarch64-apple-darwin.tar.xz"
+      sha256 "03511ca912ba32ddb4fdd2e4e2f40502ca3324ec7cacd85bce45f0e208e7a8d1"
     end
     if Hardware::CPU.intel?
-      url "https://github.com/dotzenith/TheSeptaTimes.rs/releases/download/v0.12.1/the-septa-times-x86_64-apple-darwin.tar.xz"
-      sha256 "4e27bbd849f4d5ec273890c4982521a3110c36196cbcc562db47dffcbd2724c8"
+      url "https://github.com/dotzenith/TheSeptaTimes.rs/releases/download/v0.12.2/the-septa-times-x86_64-apple-darwin.tar.xz"
+      sha256 "83842d75598408b00708ed59e066df95349132d858e69a09043ed18812705b4e"
     end
   end
   if OS.linux?
     if Hardware::CPU.arm?
-      url "https://github.com/dotzenith/TheSeptaTimes.rs/releases/download/v0.12.1/the-septa-times-aarch64-unknown-linux-gnu.tar.xz"
-      sha256 "e675ba02ec48943e62c883cb6a05521321f43c0d9b247ce73f9833812dbdb352"
+      url "https://github.com/dotzenith/TheSeptaTimes.rs/releases/download/v0.12.2/the-septa-times-aarch64-unknown-linux-gnu.tar.xz"
+      sha256 "6870e463c9b8caacb8159be8db5a9b3b57c1bfad47e4a5e8dc7a1fc088ed3616"
     end
     if Hardware::CPU.intel?
-      url "https://github.com/dotzenith/TheSeptaTimes.rs/releases/download/v0.12.1/the-septa-times-x86_64-unknown-linux-gnu.tar.xz"
-      sha256 "70509dc00ca04df2adec5554c790de5f60708a00134c17bcb7900ce5be1d67b4"
+      url "https://github.com/dotzenith/TheSeptaTimes.rs/releases/download/v0.12.2/the-septa-times-x86_64-unknown-linux-gnu.tar.xz"
+      sha256 "68d49da354ec3b2a024b8fbd87bd55e5ac1ec7aec08d7eac9d22e594c61c9857"
     end
   end
   license "MIT"
@@ -56,9 +56,6 @@ class TheSeptaTimes < Formula
     bin.install "tst" if OS.linux? && Hardware::CPU.intel?
 
     install_binary_aliases!
-
-    # Generate and install shell completions
-    generate_completions_from_executable(bin/"tst", "completion")
 
     # Homebrew will automatically install these, so we don't need to do that
     doc_files = Dir["README.*", "readme.*", "LICENSE", "LICENSE.*", "CHANGELOG.*"]
