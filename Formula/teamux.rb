@@ -1,25 +1,25 @@
 class Teamux < Formula
   desc "Create and Join tmux sessions with ease"
   homepage "https://github.com/dotzenith/teamux"
-  version "1.0.0"
+  version "1.0.1"
   if OS.mac?
     if Hardware::CPU.arm?
-      url "https://github.com/dotzenith/teamux/releases/download/v1.0.0/teamux-aarch64-apple-darwin.tar.xz"
-      sha256 "c101a4c505a8556d737ae9ca79a67a5a9182967786b9dca0304c80c2a38c265e"
+      url "https://github.com/dotzenith/teamux/releases/download/v1.0.1/teamux-aarch64-apple-darwin.tar.xz"
+      sha256 "d5cbb7b04b650e6190dbea57873436e080b655b5d6da07704409ce682040d0c1"
     end
     if Hardware::CPU.intel?
-      url "https://github.com/dotzenith/teamux/releases/download/v1.0.0/teamux-x86_64-apple-darwin.tar.xz"
-      sha256 "ddfb7bf773ff8ce9d0aa435d0f425d4f57353e982367e949d6df22f1b8b6625c"
+      url "https://github.com/dotzenith/teamux/releases/download/v1.0.1/teamux-x86_64-apple-darwin.tar.xz"
+      sha256 "46221e09e8eee062f51aa9d320aa7859eaecdd7bd57665ad0ed072d77ceddf57"
     end
   end
   if OS.linux?
     if Hardware::CPU.arm?
-      url "https://github.com/dotzenith/teamux/releases/download/v1.0.0/teamux-aarch64-unknown-linux-gnu.tar.xz"
-      sha256 "8a82a2a13bf238a5807b9b5e9b393b0760ba64fa45868b1e5dc15fb014b368f6"
+      url "https://github.com/dotzenith/teamux/releases/download/v1.0.1/teamux-aarch64-unknown-linux-gnu.tar.xz"
+      sha256 "8760438991ee1390c2177acabc94964fd0e481db43a1e682520d7f7b044a1512"
     end
     if Hardware::CPU.intel?
-      url "https://github.com/dotzenith/teamux/releases/download/v1.0.0/teamux-x86_64-unknown-linux-gnu.tar.xz"
-      sha256 "4377f4de78b30615f26e35f25fb7bfeadfc5b55af054aadb9268e2b3077e2dca"
+      url "https://github.com/dotzenith/teamux/releases/download/v1.0.1/teamux-x86_64-unknown-linux-gnu.tar.xz"
+      sha256 "b5f812293b3796d4b188762e78c51903abba362ea6b16ee673bac9837b0bdf24"
     end
   end
   license "MIT"
