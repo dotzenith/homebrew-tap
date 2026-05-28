@@ -57,6 +57,9 @@ class TheSeptaTimes < Formula
 
     install_binary_aliases!
 
+    # Generate and install shell completions
+    generate_completions_from_executable(bin/"tst", "completion")
+
     # Homebrew will automatically install these, so we don't need to do that
     doc_files = Dir["README.*", "readme.*", "LICENSE", "LICENSE.*", "CHANGELOG.*"]
     leftover_contents = Dir["*"] - doc_files
