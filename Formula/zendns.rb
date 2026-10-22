@@ -1,25 +1,25 @@
 class Zendns < Formula
   desc "Manage Dynamic DNS with serenity"
   homepage "https://github.com/dotzenith/ZenDNS"
-  version "1.1.1"
+  version "1.1.2"
   if OS.mac?
     if Hardware::CPU.arm?
-      url "https://github.com/dotzenith/ZenDNS/releases/download/v1.1.1/zendns-aarch64-apple-darwin.tar.xz"
-      sha256 "3058fe8a5056166b238914df6cc487557a33ffea06c28973114c922545008ae7"
+      url "https://github.com/dotzenith/ZenDNS/releases/download/v1.1.2/zendns-aarch64-apple-darwin.tar.xz"
+      sha256 "25e3b3e654cf03ed80f9e8ef47e983cd55f1add2647849b348671d8ec56010ba"
     end
     if Hardware::CPU.intel?
-      url "https://github.com/dotzenith/ZenDNS/releases/download/v1.1.1/zendns-x86_64-apple-darwin.tar.xz"
-      sha256 "384645d394b2e63da80b67d84fe2a1138be67379b6af9433cd0561ba6d1aebb4"
+      url "https://github.com/dotzenith/ZenDNS/releases/download/v1.1.2/zendns-x86_64-apple-darwin.tar.xz"
+      sha256 "7bed2e6016b350d3207ed2f8f2babbddab3de11a66b60cd8615e86e71e9ae329"
     end
   end
   if OS.linux?
     if Hardware::CPU.arm?
-      url "https://github.com/dotzenith/ZenDNS/releases/download/v1.1.1/zendns-aarch64-unknown-linux-gnu.tar.xz"
-      sha256 "22926a046a5284055ecd4db0c61d05654f35734ffb6bd84c16379ec44a3f4dc3"
+      url "https://github.com/dotzenith/ZenDNS/releases/download/v1.1.2/zendns-aarch64-unknown-linux-gnu.tar.xz"
+      sha256 "bd5b4c632a734b3d269fdcd56283360fba8a20b2594b6c8126ffd38cfd1f79e7"
     end
     if Hardware::CPU.intel?
-      url "https://github.com/dotzenith/ZenDNS/releases/download/v1.1.1/zendns-x86_64-unknown-linux-gnu.tar.xz"
-      sha256 "02607f2c11cf131159bc53a069c86fa40ba9f86f27c5e8f27d7b8198409aec54"
+      url "https://github.com/dotzenith/ZenDNS/releases/download/v1.1.2/zendns-x86_64-unknown-linux-gnu.tar.xz"
+      sha256 "83b7ac3e95c72381e0eaae45dda955a261f0a4a1bd977844b59df25481f94328"
     end
   end
   license "MIT"
@@ -50,10 +50,18 @@ class Zendns < Formula
   end
 
   def install
-    bin.install "zendns" if OS.mac? && Hardware::CPU.arm?
-    bin.install "zendns" if OS.mac? && Hardware::CPU.intel?
-    bin.install "zendns" if OS.linux? && Hardware::CPU.arm?
-    bin.install "zendns" if OS.linux? && Hardware::CPU.intel?
+    if OS.mac? && Hardware::CPU.arm?
+      bin.install "zendns"
+    end
+    if OS.mac? && Hardware::CPU.intel?
+      bin.install "zendns"
+    end
+    if OS.linux? && Hardware::CPU.arm?
+      bin.install "zendns"
+    end
+    if OS.linux? && Hardware::CPU.intel?
+      bin.install "zendns"
+    end
 
     install_binary_aliases!
 
